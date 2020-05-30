@@ -1,8 +1,7 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import Item from "./Item";
-const list=[{done: false, text: 'Red'}, {done: true, text: 'Black'}]
+import List from "./List";
 
 function App() {
   return (
@@ -14,7 +13,7 @@ function App() {
         </p>
         <h1>The new list</h1>
         <br/>
-        {list.map(item => <Item done={item.done} text={item.text} />)}
+        <List />
         
         <a
           className="App-link"
@@ -32,3 +31,4 @@ function abc(a) {
   return a + 10;
 }
 export default App;
+

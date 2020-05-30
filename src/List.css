@@ -1,0 +1,9 @@
+.List {
+    width: 500px;
+    align-self: center;
+}
+
+.block{
+    display: inline-block;
+    width: 100px;
+}
