@@ -5,7 +5,7 @@ import "./List.css";
 
 function List() {
     const [list, dispatch] = useReducer(
-        reducer, 
+        reducer,
         [{ done: false, text: 'Red' }, { done: true, text: 'Black' }]
     )
     const [text, setText] = useState('')
@@ -28,7 +28,9 @@ function List() {
                     <Item
                         done={item.done}
                         text={item.text}
-                        onClick={() => dispatch({ type: 'done', text: item.text })}
+                        onClick={() => dispatch(
+                            { type: 'done', text: item.text }
+                        )}
                     />
                 )
             )
@@ -38,13 +40,42 @@ function List() {
 
 // state = [{ done: false, text: 'Red' }, { done: true, text: 'Black' }]
 // action = { type: 'done', text: item.text }
-function reducer(state, action) {
+/**
+ * 
+ * @param {{ done: boolean, text: string }[]} oldState 
+ * @param {{ type: 'done' | 'add', text: string }} action 
+ * @returns {{ done: boolean, text: string }[]}
+ */
+function reducer(oldState, action) {
     switch (action.type) {
         case 'add':
-            return [{ done: false, text: action.text }, ...state]
+            return [{ done: false, text: action.text }, ...oldState].sort(compare)
+        default:
         case 'done':
-            return state.map(item => item.text === action.text ? {...item, done: !item.done} : item)
+            return oldState.map(
+                item => item.text === action.text
+                    ? { ...item, done: !item.done }
+                    : item
+            ).sort(compare)
+
     }
+
+}
+
+/**
+ * 
+ * @param {{ done: boolean, text: string }} item1 
+ * @param {{ done: boolean, text: string }} item2
+ * @returns {1 | 0 | -1} 
+ */
+function compare(item1, item2) {
+    if (item1.done && !item2.done) {
+        return -1
+    }
+    if (!item1.done && item2.done) {
+        return 1
+    }
+    return 0
 }
 
 export default List;
