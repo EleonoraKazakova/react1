@@ -3,12 +3,16 @@ import logo from "./logo.svg";
 import "./App.css";
 import List from "./List";
 import Empty from "./Empty";
+import Menu from './Menu'
 
 function App() {
   const [ page, setPage ] = useState('1')
   
   return (
     <div className="App">
+      <Menu />
+
+
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
