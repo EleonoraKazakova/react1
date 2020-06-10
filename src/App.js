@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import List from "./List";
 import Empty from "./Empty";
 import Menu from './Menu'
 import Gallery from './gallery/Gallery'
+import Text from "./Text"
 
 function App() {
   const [ page, setPage ] = useState('1')
@@ -16,10 +16,8 @@ function App() {
       <Gallery />
 
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          My <code>src/App.js</code> code.
-        </p>
+        <Text />
+
         <div>
           <button className='block' onClick={() => setPage('1') }>List</button>
           <button className='block' onClick={() => setPage('2') }>Empty</button>

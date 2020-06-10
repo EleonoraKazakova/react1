@@ -1,0 +1,16 @@
+.text-container{
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+.text {
+    color: navy;
+    width: 50%; 
+    text-align: justify;
+}
+
+.photo {
+    object-fit: contain; 
+}
+
