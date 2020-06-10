@@ -1,0 +1,14 @@
+.preview{
+    width: 150px;
+    padding: 2px;
+    cursor: pointer;    
+}
+.preview-container{
+    display: flex;
+    justify-content: space-between;
+    width: 500px;
+}
+
+.selected{
+    border: 1px solid rgb(3, 3, 71);
+}

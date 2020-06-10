@@ -4,6 +4,7 @@ import "./App.css";
 import List from "./List";
 import Empty from "./Empty";
 import Menu from './Menu'
+import Gallery from './gallery/Gallery'
 
 function App() {
   const [ page, setPage ] = useState('1')
@@ -12,6 +13,7 @@ function App() {
     <div className="App">
       <Menu />
 
+      <Gallery />
 
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
