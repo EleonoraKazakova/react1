@@ -3,15 +3,15 @@
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 150px;
   pointer-events: none;
 }
-
+/*
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-}
+}*/
 
 .App-header {
   background-color: #b1035a;
@@ -36,3 +36,10 @@
     transform: rotate(360deg);
   }
 }
+
+
+.block{
+  width: 100px;
+  display: inline-block;
+}
+

@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import List from "./List";
+import Empty from "./Empty";
 
 function App() {
+  const [ page, setPage ] = useState('1')
+  
   return (
     <div className="App">
       <header className="App-header">
@@ -11,9 +14,15 @@ function App() {
         <p>
           My <code>src/App.js</code> code.
         </p>
+        <div>
+          <button className='block' onClick={() => setPage('1') }>List</button>
+          <button className='block' onClick={() => setPage('2') }>Empty</button>
+        </div>
+
         <h1>The new list</h1>
-        <br/>
-        <List />
+        <br />
+        {page === '1' ? <List /> : <Empty />}
+        
         
         <a
           className="App-link"
