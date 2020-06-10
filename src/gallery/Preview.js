@@ -11,16 +11,18 @@ import './Preview.css'
     */
 function Preview(props) {
     return (
-        <div className='preview-container'>
-            {props.photos.map(
-                (photo, i) => <img
-                    src={photo}
-                    className={props.currentPhoto === i ? 'selected preview' : 'preview'}
-                    onClick={() => props.setCurrentPhoto(i)}
-                    alt=''
-                />
-            )}
+        <div className='background-container'>
+            <div className='preview-container'>
+                {props.photos.map(
+                    (photo, i) => <img
+                        src={photo}
+                        className={props.currentPhoto === i ? 'selected preview' : 'preview'}
+                        onClick={() => props.setCurrentPhoto(i)}
+                        alt=''
+                    />
+                )}
 
+            </div>
         </div>
     )
 

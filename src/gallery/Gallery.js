@@ -1,14 +1,16 @@
 //@ts-check
 import React, { useState } from 'react'
-import photo1 from '../photo/IMG_4758.JPG'
-import photo2 from '../photo/IMG_4802.JPG'
-import photo3 from '../photo/IMG_4832.JPG'
 import Slider from './Slider'
 import Preview from './Preview'
 import './Gallery.css'
 
+function importAll(r) {
+    return r.keys().map(r);
+}
+
+
 function Gallery() {
-    const photos = [photo1, photo2, photo3]
+    const photos = importAll(require.context('../photo', false, /\.(png|jpe?g|svg)$/i));
     const [currentPhoto, setCurrentPhoto] = useState(0)
 
     return <div>

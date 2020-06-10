@@ -7,8 +7,18 @@
     display: flex;
     justify-content: space-between;
     width: 500px;
+    flex-wrap: wrap;
+    
 }
 
 .selected{
     border: 1px solid rgb(3, 3, 71);
+}
+
+.background-container{
+    background-color: rgb(159, 181, 202);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 5px;
 }
