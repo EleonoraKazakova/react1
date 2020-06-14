@@ -1,18 +1,18 @@
-.photo{
-    width: 500px;
+.photo {
+  width: 500px;
 }
 
 .photo_hidden {
-    display: none;
+  display: none;
 }
 
 .arrow {
-    width: 30px;
-    cursor: pointer;
+  width: 30px;
+  cursor: pointer;
 }
 
 .container {
-    align-items: center;
-    display: flex;
-    justify-content: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }

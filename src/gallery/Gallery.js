@@ -1,38 +1,35 @@
 //@ts-check
-import React, { useState } from 'react'
-import Slider from './Slider'
-import Preview from './Preview'
-import './Gallery.css'
+import React, { useState } from "react";
+import Slider from "./Slider";
+import Preview from "./Preview";
+import "./Gallery.css";
 
 function importAll(r) {
-    return r.keys().map(r);
+  return r.keys().map(r);
 }
-
 
 function Gallery() {
-    const photos = importAll(require.context('../photo', false, /\.(png|jpe?g|svg)$/i));
-    const [currentPhoto, setCurrentPhoto] = useState(0)
+  const photos = importAll(
+    require.context("../photo", false, /\.(png|jpe?g|svg)$/i)
+  );
+  const [currentPhoto, setCurrentPhoto] = useState(0);
 
-    return <div>
-        <Slider
-            photos={photos}
-            currentPhoto={currentPhoto}
-            setCurrentPhoto={setCurrentPhoto}
+  return (
+    <div>
+      <Slider
+        photos={photos}
+        currentPhoto={currentPhoto}
+        setCurrentPhoto={setCurrentPhoto}
+      />
+      <div className="gallery">
+        <Preview
+          photos={photos}
+          currentPhoto={currentPhoto}
+          setCurrentPhoto={setCurrentPhoto}
         />
-        <div className='gallery'>
-            <Preview
-                photos={photos}
-                currentPhoto={currentPhoto}
-                setCurrentPhoto={setCurrentPhoto}
-            />
-        </div>
-
+      </div>
     </div>
-
-
-
-
+  );
 }
 
-
-export default Gallery 
+export default Gallery;
