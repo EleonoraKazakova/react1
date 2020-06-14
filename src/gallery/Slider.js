@@ -1,8 +1,9 @@
 //@ts-check
-import React from "react";
+import React, { useState } from "react";
 import "./Slider.css";
 import arrowLeft from "../svg/back.svg";
 import arrowRight from "../svg/next.svg";
+import FullScreen from "./FullScreen";
 
 /**
  * @param {{
@@ -12,6 +13,8 @@ import arrowRight from "../svg/next.svg";
  * }} props
  */
 function Slider({ photos, currentPhoto, setCurrentPhoto }) {
+  const [showFullScreen, setShowFullScreen] = useState(false);
+
   return (
     <div className="container">
       <img
@@ -25,11 +28,20 @@ function Slider({ photos, currentPhoto, setCurrentPhoto }) {
         }
       />
       {photos.map((photo, i) => (
-        <img
-          src={photo}
-          className={currentPhoto === i ? "photo" : "photo_hidden"}
-          alt=""
-        />
+        <div>
+          <img
+            src={photo}
+            className={currentPhoto === i ? "photo" : "photo_hidden"}
+            alt=""
+            onClick={() => setShowFullScreen(true)}
+          />
+          {showFullScreen && currentPhoto === i ? (
+            <FullScreen
+              photo={photo}
+              closeFunction={() => setShowFullScreen(false)}
+            />
+          ) : null}
+        </div>
       ))}
       <img
         src={arrowRight}

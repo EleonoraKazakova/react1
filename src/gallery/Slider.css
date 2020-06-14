@@ -1,5 +1,6 @@
 .photo {
   width: 500px;
+  cursor: pointer;
 }
 
 .photo_hidden {
