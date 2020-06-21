@@ -1,3 +1,5 @@
+//@ts-check
+
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 
@@ -22,5 +24,12 @@ function Cat() {
     )
 
 }
+
+/**
+ * 
+ * @param {'cat' | 'dog'} animal
+ * @returns {'cat' | 'dog'} 
+ */
+export const chooseAnimal = (animal) => animal === 'dog' ? 'cat' : 'dog'
 
 export default Cat 
