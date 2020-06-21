@@ -6,6 +6,7 @@ import Menu from "./Menu";
 import Gallery from "./gallery/Gallery";
 import Text from "./Text";
 import Search from "./Search";
+import Cat from "./Cat";
 
 function App() {
   const [page, setPage] = useState("1");
@@ -19,6 +20,7 @@ function App() {
       <header className="App-header">
         <Text />
         <Search />
+        <Cat />
 
         <div>
           <button className="block" onClick={() => setPage("1")}>
