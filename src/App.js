@@ -7,6 +7,7 @@ import Gallery from "./gallery/Gallery";
 import Text from "./Text";
 import Search from "./Search";
 import Cat from "./Cat";
+import AlbumSection from './AlbumSection'
 
 function App() {
   const [page, setPage] = useState("1");
@@ -21,6 +22,7 @@ function App() {
         <Text />
         <Search />
         <Cat />
+        <AlbumSection />
 
         <div>
           <button className="block" onClick={() => setPage("1")}>

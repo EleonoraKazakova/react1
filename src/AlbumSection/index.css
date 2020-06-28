@@ -1,0 +1,6 @@
+.AlbumSection-text:nth-child(even){
+     background: rgb(241, 180, 180)
+}
+.AlbumSection-text:nth-child(odd){
+    background: #FFF
+}
