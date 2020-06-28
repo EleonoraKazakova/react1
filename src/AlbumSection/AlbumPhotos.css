@@ -1,0 +1,10 @@
+.AlbumPhotos {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+
+.AlbumPhotos-img {
+    padding: 3px;
+}
