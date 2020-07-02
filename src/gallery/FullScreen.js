@@ -8,6 +8,7 @@ function FullScreen(props) {
         src={props.photo}
         className="FullScreen-img"
         onClick={props.closeFunction}
+        alt=''
       />
     </div>
   );

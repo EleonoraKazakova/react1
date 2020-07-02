@@ -16,7 +16,7 @@ function AlbumPhotos(props) {
                 (await Axios(`https://jsonplaceholder.typicode.com/albums/${props.id}/photos`)).data
             )
         makeRequest()
-    }, [])
+    }, [props.id])
 
     return (
         <div className='AlbumPhotos'>

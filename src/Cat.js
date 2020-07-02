@@ -19,7 +19,7 @@ function Cat() {
 
   return (
     <div>
-      <img className='Cat-image' src={image} />
+      <img className='Cat-image' src={image} alt='' />
       <button onClick={() => setAnimal(animal === "dog" ? "cat" : "dog")}>
         {animal}
       </button>

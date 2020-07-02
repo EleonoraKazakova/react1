@@ -16,7 +16,7 @@ function Text() {
         placerat duis ultricies lacus. Fringilla urna porttitor rhoncus dolor
         purus non enim praesent elementum.
       </p>
-      <img src={photoText} className="photo" />
+      <img src={photoText} className="photo" alt='' />
     </div>
   );
 }
