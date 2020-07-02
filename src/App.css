@@ -13,7 +13,7 @@
   }
 }*/
 
-.App-header {
+.App-todo {
   background-color: #fcfcfd;
   min-height: 100vh;
   display: flex;
@@ -22,10 +22,6 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: rgb(43, 43, 36);
-}
-
-.App-link {
-  color: #61dafb;
 }
 
 @keyframes App-logo-spin {
@@ -41,3 +37,4 @@
   width: 100px;
   display: inline-block;
 }
+

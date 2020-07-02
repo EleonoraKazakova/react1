@@ -2,6 +2,8 @@
   background-color: rgb(3, 3, 71);
   color: rgb(255, 255, 255);
   font-size: 20px;
+  position: fixed;
+  width: 100%;
 }
 
 .Country {
@@ -27,4 +29,35 @@
 
 .selected_country {
   background-color: hsl(197, 96%, 9%);
+}
+
+.Menu-nav {
+  height: 100%;
+  position: fixed;
+  width: 100px;
+  background-color: rgb(3, 3, 71);
+  color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 25px;
+  padding-top: 30px;
+  font-size: 18px;
+}
+
+.Menu-link {
+  color: aliceblue;
+}
+
+.Menu-menu {
+  position: fixed;
+  width: 100px;
+  background-color: rgb(3, 3, 71);
+  color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 25px;
+  font-size: 20px;
+  z-index: 1;
 }
