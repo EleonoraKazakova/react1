@@ -23,8 +23,15 @@
   cursor: pointer;
 }
 
-.city:hover {
+.Menu-city:hover {
   background-color: hsl(197, 96%, 9%);
+}
+
+.Menu-city {
+  display: block;
+  color: aliceblue;
+  text-decoration: none;
+
 }
 
 .selected_country {

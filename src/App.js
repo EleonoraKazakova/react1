@@ -12,41 +12,42 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
   const [page, setPage] = useState("1");
-
+  
   return (
     <Router>
       <div className="App">
         <Menu />
-        <Switch>
-          <Route path='/search'>
-            <Search />
-          </Route>
-          <Route path='/albums'>
-            <AlbumSection />
-          </Route>
-          <Route path='/to-do'>
-            <div className='App-todo'>
-              <Cat />
-              <div>
-                <button className="block" onClick={() => setPage("1")}>
-                  List
+        <div className='App-body'>
+          <Switch>
+            <Route path='/search'>
+              <Search />
+            </Route>
+            <Route path='/albums'>
+              <AlbumSection />
+            </Route>
+            <Route path='/to-do'>
+              <div className='App-todo'>
+                <Cat />
+                <div>
+                  <button className="block" onClick={() => setPage("1")}>
+                    List
                 </button>
-                <button className="block" onClick={() => setPage("2")}>
-                  Empty
+                  <button className="block" onClick={() => setPage("2")}>
+                    Empty
                 </button>
+                </div>
+
+                <h1>The new list</h1>
+                <br />
+                {page === "1" ? <List /> : <Empty />}
               </div>
-
-              <h1>The new list</h1>
-              <br />
-              {page === "1" ? <List /> : <Empty />}
-            </div>
-          </Route>
-          <Route path='/'>
-
-            <Gallery />
-            <Text />
-          </Route>
-        </Switch>
+            </Route>
+            <Route path='/'>
+              <Gallery />
+              <Text />
+            </Route>
+          </Switch>
+        </div>
       </div>
     </Router>
   );

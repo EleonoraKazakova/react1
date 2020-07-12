@@ -38,3 +38,6 @@
   display: inline-block;
 }
 
+.App-body{
+  padding-top: 30px;
+}

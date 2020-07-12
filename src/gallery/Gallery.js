@@ -1,18 +1,26 @@
 //@ts-check
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Slider from "./Slider";
 import Preview from "./Preview";
 import "./Gallery.css";
 
-function importAll(r) {
-  return r.keys().map(r);
-}
+const BACKEND = 'http://localhost:4000/'
 
 function Gallery() {
-  const photos = importAll(
-    require.context("../photo", false, /\.(png|jpe?g|svg)$/i)
-  );
   const [currentPhoto, setCurrentPhoto] = useState(0);
+  const [photos, setPhotos] = useState([])
+
+  useEffect(() => {
+    const makeRequest = async () =>
+      setPhotos(
+        (
+          await (await fetch(BACKEND + 'file'))
+            .json()
+        ).files.map(photo => BACKEND + photo)
+      )
+    makeRequest()
+  }, []
+  )
 
   return (
     <div>

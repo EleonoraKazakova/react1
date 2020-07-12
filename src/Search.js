@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from "react";
 import "./Search.css";
-import axios from "axios";
+
 function Search() {
   const [data, setData] = useState([]);
   const [query, setQuery] = useState("");
   useEffect(() => {
     const makeRequest = async () =>
       setData(
-        (await axios(`https://hn.algolia.com/api/v1/search?query=${query}`))
-          .data.hits
+        (await (await fetch(`https://hn.algolia.com/api/v1/search?query=${query}`))
+          .json())
+          .hits
       );
     makeRequest();
   }, [query]);

@@ -43,7 +43,7 @@ function Menu() {
               className={currentCountry === country ? "cities" : "cities_hidden"}
             >
               {cities.map((city) => (
-                <div className="city">{city}</div>
+                <Link className="Menu-city" to={`/gallery/${country}/${city}`}>{city}</Link>
               ))}
             </div>
           </div>
