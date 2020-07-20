@@ -12,7 +12,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
   const [page, setPage] = useState("1");
-  
+
   return (
     <Router>
       <div className="App">
@@ -42,8 +42,23 @@ function App() {
                 {page === "1" ? <List /> : <Empty />}
               </div>
             </Route>
+
+            <Route
+              path='/gallery/:country/:city'
+              render={(props) =>
+                <div>
+                  {console.log(props)}
+                  <Gallery
+                    city={props.match.params.city}
+                  />
+                  <Text />
+                </div>}
+            />
+
             <Route path='/'>
-              <Gallery />
+              <Gallery
+                city='Home'
+              />
               <Text />
             </Route>
           </Switch>

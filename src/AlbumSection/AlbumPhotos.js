@@ -9,6 +9,7 @@ import './AlbumPhotos.css'
  */
 function AlbumPhotos(props) {
     const [photos, setPhotos] = useState([])
+    const [showMore, setShowMore] = useState(false)
 
     useEffect(() => {
         const makeRequest = async () =>
@@ -19,15 +20,34 @@ function AlbumPhotos(props) {
     }, [props.id])
 
     return (
-        <div className='AlbumPhotos'>
-            {photos.map((photo) => (
+        <>
+            <div className='AlbumPhotos'>
+                {/* {photos.map((photo) => (
                 <img 
                     className='AlbumPhotos-img'
                     src={photo.thumbnailUrl}
                     alt=''
                 />
-            ))}
-        </div>
+            ))} */}
+
+                {photos.slice(0, (showMore ? photos.length : 9)).map((photo) => (
+                    <img
+                        className='AlbumPhotos-img'
+                        src={photo.thumbnailUrl}
+                        alt=''
+                    />
+                ))}
+
+
+            </div>
+
+            <div
+                onClick={() => setShowMore(!showMore)}
+                
+            >
+                Show more
+            </div>
+        </>
     )
 }
 

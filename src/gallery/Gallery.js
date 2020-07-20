@@ -6,7 +6,7 @@ import "./Gallery.css";
 
 const BACKEND = 'http://localhost:4000/'
 
-function Gallery() {
+function Gallery(props) {
   const [currentPhoto, setCurrentPhoto] = useState(0);
   const [photos, setPhotos] = useState([])
 
@@ -14,7 +14,7 @@ function Gallery() {
     const makeRequest = async () =>
       setPhotos(
         (
-          await (await fetch(BACKEND + 'file'))
+          await (await fetch(BACKEND + `file/${props.city}`))
             .json()
         ).files.map(photo => BACKEND + photo)
       )
