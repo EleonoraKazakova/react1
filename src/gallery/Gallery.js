@@ -19,7 +19,7 @@ function Gallery(props) {
         ).files.map(photo => BACKEND + photo)
       )
     makeRequest()
-  }, []
+  }, [props.city]
   )
 
   return (

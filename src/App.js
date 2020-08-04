@@ -47,7 +47,6 @@ function App() {
               path='/gallery/:country/:city'
               render={(props) =>
                 <div>
-                  {console.log(props)}
                   <Gallery
                     city={props.match.params.city}
                   />

@@ -5,10 +5,14 @@
 
 .text {
   color: navy;
-  width: 50%;
+  width: 70%;
   text-align: justify;
+  padding-left: 10px;
+  
 }
 
 .photo {
   object-fit: contain;
+  margin: 5px;
+  padding: 5px;
 }
