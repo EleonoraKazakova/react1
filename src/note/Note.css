@@ -1,0 +1,16 @@
+.note{
+    display: flex;
+    flex-direction: row;
+    background-color: aliceblue;
+    height: 100%;
+}
+
+.noteItem{
+    background-color: rgb(252, 252, 241);
+    width: 30%;
+}
+
+.noteText{
+    background-color: rgba(213, 216, 184);
+    width: 70%;
+}

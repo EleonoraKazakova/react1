@@ -26,6 +26,7 @@ function Menu() {
           <Link className='Menu-link' to='/search'>Search</Link>
           <Link className='Menu-link' to='/albums'>Albums</Link>
           <Link className='Menu-link' to='/to-do'>To-do</Link>
+          <Link className='Menu-link' to='/note/1'>Note</Link>
         </nav> : null
       }
 

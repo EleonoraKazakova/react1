@@ -1,5 +1,8 @@
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .App-logo {
@@ -39,5 +42,6 @@
 }
 
 .App-body{
-  padding-top: 30px;
+  flex: 1 1 auto;
+  overflow-y: auto;
 }

@@ -9,6 +9,7 @@ import Search from "./Search";
 import Cat from "./Cat";
 import AlbumSection from './AlbumSection'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Note from './note/Note'
 
 function App() {
   const [page, setPage] = useState("1");
@@ -42,6 +43,16 @@ function App() {
                 {page === "1" ? <List /> : <Empty />}
               </div>
             </Route>
+
+            <Route
+              path='/note/:item'
+              render={(props) =>
+                <Note
+                  item={props.match.params.item}
+                />
+              }
+            />
+
 
             <Route
               path='/gallery/:country/:city'
