@@ -1,11 +1,16 @@
 .Items-link{
     display: flex;
     flex-direction: column;
-    
+    padding-left: 70px;
 }
 
 .Items-current{
     display: flex;
     flex-direction: column;
     background-color: rgba(213, 216, 184);
+    padding-left: 70px;
+}
+
+.Items-link:hover {
+    background-color: rgb(146, 173, 148);
 }

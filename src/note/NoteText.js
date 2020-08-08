@@ -4,8 +4,14 @@ import './NoteText.css'
 function NoteText(props) {
     return (
         <>
-            <h3>{props.title}</h3>
-            <textarea className='NoteText-text' value={props.text}
+            <input
+                type='text'
+                value={props.name}
+                onChange={event => props.saveName(event.target.value)}
+            />
+            <textarea
+                className='NoteText-text'
+                value={props.text}
                 onChange={(event) => props.saveText(event.target.value)}
             />
         </>
